@@ -23,4 +23,4 @@
     if (e.key === "Enter" && userMessage) {
         handleOutgoingMessage(userMessage);
     }
- })
+ });
