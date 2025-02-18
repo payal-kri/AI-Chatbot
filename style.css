@@ -88,7 +88,7 @@ body {
         gap: 11px;
     }
 
-    .chat-body .bot-message .bot-avatar {  /*change*/
+    .chat-body .bot-message .bot-avatar {  
         width: 35px;
         height: 35px;
         padding: 6px;
@@ -222,18 +222,18 @@ body {
         transition: 0.2s ease;
   }
 
-  .chat-form .chat-controls .send-button {
+  .chat-form .chat-controls .send-message {
     background: #5350c4;
     display: none;
     color: #fff;
 
 }
-.chat-form .message-input:valid~.chat-controls .send-button {
+.chat-form .message-input:valid~.chat-controls .send-message {
 display: block;
 
 }
 
-.chat-form .chat-controls .send-button:hover {
+.chat-form .chat-controls .send-message:hover {
     background: #3d39ac;}
   
   .chat-form .chat-controls button:hover {
