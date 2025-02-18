@@ -58,11 +58,12 @@
                     <button type="button">
                         <i class="fa-solid fa-face-smile"></i>
                     </button>
-                    <button type="button">
-                        <i class="fa-solid fa-paperclip"></i>
-                    </button>
-                    <button type="submit" class="send-message">
-                        <i class="fa-solid fa-arrow-up-long"></i>
+                    <div class="file-upload-wrapper">
+                        <input type="file" accept="image/*" id="file-input" hidden>
+                        <button type="button" id="file-upload"><i class="fa-solid fa-paperclip"></i></button>
+
+                    </div>
+                    <button type="submit" class="send-message"><i class="fa-solid fa-arrow-up-long"></i>
                     </button>
                 </div>
             </form>

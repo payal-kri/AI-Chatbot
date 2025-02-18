@@ -80,6 +80,8 @@ body {
         margin-bottom: 82px;
         overflow-y: auto;
         flex-direction: column;
+        scrollbar-width: thin;
+        scrollbar-color: #ccccf5 transparent;
     }
 
     .chat-body .message {
@@ -127,6 +129,11 @@ body {
         color: #fff;
         background:#5350c4;
         border-radius: 13px 13px 3px 13px; 
+     }
+     .chat-body .user-message .attachment {
+        width: 50%;
+        margin-top: -7px;
+        border-radius: 13px 3px 13px 13px;
      }
 
      .chat-body .bot-message .thinking-indicator {
