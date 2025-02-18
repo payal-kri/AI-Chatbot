@@ -73,7 +73,6 @@ try{
           const incomingMessageDiv = createMessageElement(messageContent,"bot-message", "thinking");
            incomingMessageDiv.querySelector(".message-text").textContent = userData.message;
            chatBody.appendChild(incomingMessageDiv);
-           chatBody.appendChild(outgoingMessageDiv);
            generateBotResponse();
         },600);
         
@@ -87,17 +86,6 @@ try{
 
      sendMessageButton.addEventListener("click", (e) =>  handleOutgoingMessage(e) );
 
-       const incomingMessageDiv = createMessageElement(messageContent,"bot-message");
-       chatBody.appendChild(incomingMessageDiv);
 
-
-
-//  //Handle Enter Key press  for Sending messages
-//  messageInput.addEventListener("keydown", (e) => {
-//     const userMessage = e.target.value.trim();
-//     if (e.key === "Enter" && userMessage) {
-//         handleOutgoingMessage(e);
-//     }
-//  });
 
 //  sendMessageButton.addEventListener("click", (e) =>  handleOutgoingMessage(e) );
