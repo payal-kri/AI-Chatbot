@@ -1,61 +1,28 @@
  const chatBody = document.querySelector(".chat-body");
  const messageInput = document.querySelector(".message-input");
  const sendMessageButton = document.querySelector(".send-message");
-    
-const userData ={
+    const userData ={
     message:null
 }
-
- //Create a message element with dynamic classes and return it
- const createMessageElement = (content,classes) => {
+//  //Create a message element with dynamic classes and return it
+ const createMessageElement = (content,...classes) => {
     const div = document.createElement("div");
-    div.classList.add("message",classes);
+    div.classList.add("message",...classes);
     div.innerHTML = content;
     return div;
  }
-//Handle outgoing user message
+// //Handle outgoing user message
      const handleOutgoingMessage = (e) => {
         e.preventDefault();
         userData.message = messageInput.value.trim();
         messageInput.value = "";
-    // create and display user messages
-    const messageContent = `<div class="message-text"></div>`;
-
+//     // create and display user messages
+    const messageContent = `<div class="message-text"></div>`; //
     const outgoingMessageDiv = createMessageElement(messageContent,"user-message");
     outgoingMessageDiv.querySelector(".message-text").textContent = userData.message;
     chatBody.appendChild(outgoingMessageDiv);
-
-    //Simulate bot response with thinking after a delay
-    setTimeout(() => {
-    },600);
-     const chatBody = document.querySelector(".chat-body");
-     const messageInput = document.querySelector(".message-input");
-     const sendMessageButton = document.querySelector(".send-message");
-        
-    const userData ={
-        message:null
-    }
-
-     //Create a message element with dynamic classes and return it
-     const createMessageElement = (content,classes) => {
-        const div = document.createElement("div");
-        div.classList.add("message",classes);
-        div.innerHTML = content;
-        return div;
-     }
-    //Handle outgoing user message
-         const handleOutgoingMessage = (e) => {
-            e.preventDefault();
-            userData.message = messageInput.value.trim();
-            messageInput.value = "";
-        // create and display user messages
-        const messageContent = `<div class="message-text"></div>`;
-
-        const outgoingMessageDiv = createMessageElement(messageContent,"user-message");
-        outgoingMessageDiv.querySelector(".message-text").textContent = userData.message;
-        chatBody.appendChild(outgoingMessageDiv);
-
-        //Simulate bot response with thinking after a delay
+}
+//Simulate bot response with thinking after a delay
         setTimeout(() => {
            const messageContent = `<svg class="bot-avatar" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
                         <path
@@ -66,20 +33,19 @@ const userData ={
                          109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z">
                         </path>
                     </svg>
-                    <div class="message-text">
-                        <div class="thinking-indicator">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                        </div>
-                    </div>`;
-
-           const incomingMessageDiv = createMessageElement(messageContent,"bot-message");
+                     <div class="message-text">
+                         <div class="thinking-indicator">
+                             <div class="dot"></div>
+                             <div class="dot"></div>
+                             <div class="dot"></div>
+                         </div>
+                   </div>`;
+          const incomingMessageDiv = createMessageElement(messageContent,"bot-message", "thinking");
            chatBody.appendChild(incomingMessageDiv);
+           generateBotResponse();
         },600);
-    }
-
-     //Handle Enter Key press  for Sending messages
+        
+        //Handle Enter Key press  for Sending messages
      messageInput.addEventListener("keydown", (e) => {
         const userMessage = e.target.value.trim();
         if (e.key === "Enter" && userMessage) {
@@ -92,7 +58,7 @@ const userData ={
        const incomingMessageDiv = createMessageElement(messageContent,"bot-message");
        chatBody.appendChild(incomingMessageDiv);
 
-}
+
 
  //Handle Enter Key press  for Sending messages
  messageInput.addEventListener("keydown", (e) => {
