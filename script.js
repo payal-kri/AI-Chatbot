@@ -10,7 +10,7 @@
     return div;
  }
 //Handle outgoing user message
- handleOutgoingMessage = (userMessage) => {
+     const handleOutgoingMessage = (userMessage) => {
     // create and display user messages
     const messageContent = `<div class="message-text">${userMessage}</div>`;
     const outgoingMessageDiv = createMessageElement(messageContent,"user-message");
