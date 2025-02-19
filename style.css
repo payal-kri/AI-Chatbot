@@ -247,7 +247,43 @@ display: block;
     background: #f1f1ff;
 
   }
-    
+
+  .chat-form .file-upload-wrapper{
+    height: 35px;
+    width: 35px;
+    position: relative;
+  }
+
+  .chat-form .file-upload-wrapper :where(img, button){
+    position: absolute;
+  }
+
+
+  .chat-form .file-upload-wrapper img{
+    /* position: absolute;
+    display: none; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .chat-form .file-upload-wrapper #file-cancel{
+    color: red;
+    background: #FFF;
+
+  }
+
+  .chat-form .file-upload-wrapper :where(img, #file-cancel),  
+  .chat-form .file-upload-wrapper.file-uploaded #file-upload{
+    display: none;
+  }
+
+  .chat-form .file-upload-wrapper.file-uploaded img,
+  .chat-form .file-upload-wrapper.file-uploaded:hover #file-cancel{
+    display: block;
+  }
+
 
 
 
