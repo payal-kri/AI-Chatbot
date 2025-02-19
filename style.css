@@ -1,5 +1,4 @@
- 
-/* importing Google Font */
+ /* importing Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
 
 *{
@@ -103,7 +102,7 @@ body.show-chatbot .chatbot-popup{
     font-weight: 600;
     }
     
-    .chat-header #close-chatbot {   /*change*/
+    .chat-header #close-chatbot {  
         border: none;
         color: #fff;
         height: 40px;

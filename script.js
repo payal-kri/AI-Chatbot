@@ -1,5 +1,3 @@
-
-
 const chatBody = document.querySelector(".chat-body");
 const messageInput = document.querySelector(".message-input");
 const sendMessageButton = document.querySelector("#send-message");
@@ -14,7 +12,7 @@ const closeChatbot = document.querySelector("#close-chatbot");
 
 // API Key and URL
 const API_KEY = "AIzaSyAr8fG-NsCNjVe3QmnS_zMsu9Kaf6jVGa4";
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}';
 
 const userData = {
     message: null,
@@ -68,7 +66,7 @@ const generateBotResponse = async (incomingMessageDiv) => {
 
 
         // Extract and display bot's response text
-        const apiResponseText = data.candidates[0]?.content?.parts[0]?.text?.replace(/\*\*(.*?)\*\*/g, "$1").trim() || "Sorry, I didn't understand that.";
+        const apiResponseText = data.candidates[0]?.content?.parts[0]?.text?.replace(/\\(.?)\\*/g, "$1").trim() || "Sorry, I didn't understand that.";
         messageElement.innerText = apiResponseText;
 
         // add bot response to chat history
@@ -105,7 +103,7 @@ const handleOutgoingMessage = (e) => {
 
     // Create and display user message
     const messageContent = `<div class="message-text"></div>
-                                ${userData.file.data ? `<img src="data:${userData.file.mime_type};base64, ${userData.file.data}" class="attachment" />` : ""}`;
+                                ${userData.file.data ? <img src="data:${userData.file.mime_type};base64, ${userData.file.data}" class="attachment" /> : ""}`;
 
     const outgoingMessageDiv = createMessageElement(messageContent, "user-message");
     outgoingMessageDiv.querySelector(".message-text").textContent = userData.message;
@@ -145,8 +143,8 @@ messageInput.addEventListener("keydown", (e) => {
 
 // adjust input field height dynamically
 messageInput.addEventListener("input", ()=>{
-    messageInput.style.height = `${initialInputHeight}px`;
-    messageInput.style.height = `${messageInput.scrollHeight}px`;
+    messageInput.style.height = ${initialInputHeight}px;
+    messageInput.style.height = ${messageInput.scrollHeight}px;
     document.querySelector(".chat-form").style.borderRadius = messageInput.scrollHeight>initialInputHeight ? "15px" : "32px";
 });
 
@@ -203,4 +201,4 @@ document.querySelector(".chat-form").appendChild(picker);
 sendMessageButton.addEventListener("click", (e) => handleOutgoingMessage(e));
 document.querySelector("#file-upload").addEventListener("click", () => fileInput.click());
 chatbotToggler.addEventListener("click", ()=> document.body.classList.toggle("show-chatbot"));
-closeChatbot.addEventListener("click", ()=>document.body.classList.remove("show-chatbot"))
+closeChatbot.addEventListener("click", ()=>document.body.classList.remove("show-chatbot"));
